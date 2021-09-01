@@ -1,8 +1,10 @@
 
 
 
+import java.sql.SQLOutput;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Locale;
 
 public class StreamApp {
     private List<String> palabras;
@@ -30,6 +32,13 @@ public class StreamApp {
 
     public void ordenar(){
         palabras.stream().sorted().forEach(x-> System.out.println(x));
+        //palabras.stream().sorted((x,y)->y.compareTo(x)).forEach(x-> System.out.println(x));
+    }
+    public void transformarPalabras(){
+        palabras.stream().map(x->x.toUpperCase()).forEach(x->System.out.println(x));
+    }
+    public void transformarNumeros(){
+        numeros.stream().map(x->Integer.parseInt(x) + 5).forEach(System.out::println);
     }
 
 
@@ -37,6 +46,9 @@ public class StreamApp {
         StreamApp app = new StreamApp();
         app.filtrar();
         app.ordenar();
+        app.transformarPalabras();
+        app.transformarNumeros();
+
     }
 
 
