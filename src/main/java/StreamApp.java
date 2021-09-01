@@ -40,14 +40,24 @@ public class StreamApp {
     public void transformarNumeros(){
         numeros.stream().map(x->Integer.parseInt(x) + 5).forEach(System.out::println);
     }
+    public void limitar(){
+        palabras.stream().limit(3).forEach(System.out::println);
+    }
+
+    public void contar(){
+        double x= palabras.stream().count();
+        System.out.println(x);
+    }
 
 
     public static void main(String[] args) {
         StreamApp app = new StreamApp();
-        app.filtrar();
-        app.ordenar();
-        app.transformarPalabras();
-        app.transformarNumeros();
+//        app.filtrar();
+//        app.ordenar();
+//        app.transformarPalabras();
+//        app.transformarNumeros();
+        app.limitar();
+        app.contar();
 
     }
 
